@@ -21,9 +21,9 @@ const Hero = () => {
               className="block w-full rounded 
              bg-primary px-12 py-3 text-sm font-medium text-white 
              hover:bg-blue-700 hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
-              href="#"
+              href="/files"
             >
-              Get Started
+             Get started
             </a>
 
             <a
