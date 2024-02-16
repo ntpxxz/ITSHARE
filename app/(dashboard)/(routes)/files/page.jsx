@@ -1,13 +1,12 @@
 import React from 'react'
 import { UserButton } from "@clerk/nextjs";
 
-function files() {
+function Files() {
   return (
-    <div>files
-
-<UserButton afterSignOutUrl="/"/>
+    <div>Files
+        <UserButton afterSignOutUrl="/"/>
     </div>
   )
 }
 
-export default files
+export default Files
