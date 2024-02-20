@@ -16,9 +16,10 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
 
-export { app }; // Export the 'app' variable outside of the conditional block
+export const app = initializeApp(firebaseConfig);
+
+
 
 
 
