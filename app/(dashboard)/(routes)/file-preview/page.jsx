@@ -1,9 +1,10 @@
 "use client"
 import {app} from '@/firebaseConfig';
 import React, { useEffect, useState } from 'react';
-import { getFirestore } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import { ArrowRightSquare } from 'lucide-react';
 import {Link} from 'next/link';
+import FileInfo from './_components/FileInfo';
 import FileShareForm from './_compunents/FileShareForm';
 function FilePreview({params}) {
   const db = getFirestore(app);
@@ -24,7 +25,9 @@ function FilePreview({params}) {
     }
     }
     const onPasswordSave=(password)=>{
-
+      const docRef=doc(db,"uploadedFile",params?.fileId)
+      await updateDoc(docRef,{
+      password:password });
     }
   return (
     <div className='py-10 px-20'>
@@ -35,11 +38,13 @@ function FilePreview({params}) {
           <FileShareForm file={file}
           onPasswordSave={(password) =>onPasswordSave(password)}/>
         </div>
-    </div>
-
+    
     <div>FilePreview</div>
+    </div>
   )
 }
 
 export default FilePreview;
+
+
 
