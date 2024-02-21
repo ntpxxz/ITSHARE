@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ProgressBar({progress=40}) {
+function ProgressBar({progress=30}) {
   return (
     <div className='bg-gray-400 w-full p-1 h-3 mt-3 rounded-full'>
         <div className=' bg-primary h-3 rounded-full text=[10px] text-white'
