@@ -8,7 +8,7 @@ import FileInfo from './_components/FileInfo';
 import FileShareForm from './_compunents/FileShareForm';
 function FilePreview({params}) {
   const db = getFirestore(app);
-  const [file,setFire]=useState();
+  const [file,setFile]=useState();
     useEffect(()=> {
         console.log(params?.fileId)
         params?.fileId&&getFileInfo();
@@ -19,12 +19,12 @@ function FilePreview({params}) {
     if (docSnap.exists()) {
       // Use a City instance method
       console.log("Document data:",docSnap.data());
-      setFire(docSnap.data());
+      setFile(docSnap.data());
     } else {
       console.log("No such document!");
     }
     }
-    const onPasswordSave=(password)=>{
+    const onPasswordSave=async(password)=>{
       const docRef=doc(db,"uploadedFile",params?.fileId)
       await updateDoc(docRef,{
       password:password });
